@@ -9,8 +9,25 @@ output:
 
 
 
-## Project thoughts
-
+## Project Thoughts (Milestone 1)
 I am interested in exploring data related to third-party interventions in civil wars. Given that on average third-party intervention prolongs conflict duration, I want to investigate whether motive plays a role. Are altruistic third-party interventions less likely to exacerbate conflict than self-interested interventions? 
 
 For this I want to work with the COW dataset. 
+
+
+## Project thoughts (Milestone 2)
+Since I am interested in exploring the impact motive has on the prospect of launching a successful third-party intervention I was interested in looking for an additional dataset that does not only give me insights about the civil wars but also about third-party interventions that occured and their proclaimed motives. Certainly it is difficult to ever truly know the motives of a government official especially within the bounds of this assignment which is driven by quantitative analysis and not qualitative analysis. As such I plan on taking the openly stated motivation behind the intervention as assigned in the The PRIF Dataset on Humanitarian Military Interventions since 1945 as the truth for my further analysis. I then plan to combine this dataset with the COW dataset to investigate 1. the average duration of a civil war without a third-party intervention 
+2. the average duration of a civil war with a third-party duration whose motive fell into the humanitarian category (altruistic)
+3. the average duration of a civil war with a third-party duration whose motive did not fall into the humanitarian category (self-interested). 
+Consequently, I want to compare these data findings to investigate in what way the declared motive of humanitarian concern helped mitigate conflict to then infer in what way motive (altruistic v.s. self-interested) behind third-party intervention matters when it comes to ending civil wars. 
+
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+civil_war_data <- read_csv("Intra-StateWarData_v4.1.csv")
+
+humanitarian_intervention_data <- read_excel("PRIF-dataset-HMI-interventions-v-July-2019.xlsx")
+```
+
