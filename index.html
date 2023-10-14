@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.25/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","Intra-StateWarData_v4.1.csv","PRIF-dataset-HMI-interventions-v-July-2019.xlsx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1517,9 +1517,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
+<h2 id="project-thoughts-milestone-1">Project Thoughts (Milestone 1)</h2>
 <p>I am interested in exploring data related to third-party interventions in civil wars. Given that on average third-party intervention prolongs conflict duration, I want to investigate whether motive plays a role. Are altruistic third-party interventions less likely to exacerbate conflict than self-interested interventions?</p>
 <p>For this I want to work with the COW dataset.</p>
+<h2 id="project-thoughts-milestone-2">Project thoughts (Milestone 2)</h2>
+<p>Since I am interested in exploring the impact motive has on the prospect of launching a successful third-party intervention I was interested in looking for an additional dataset that does not only give me insights about the civil wars but also about third-party interventions that occured and their proclaimed motives. Certainly it is difficult to ever truly know the motives of a government official especially within the bounds of this assignment which is driven by quantitative analysis and not qualitative analysis. As such I plan on taking the openly stated motivation behind the intervention as assigned in the The PRIF Dataset on Humanitarian Military Interventions since 1945 as the truth for my further analysis. I then plan to combine this dataset with the COW dataset to investigate 1. the average duration of a civil war without a third-party intervention
+2. the average duration of a civil war with a third-party duration whose motive fell into the humanitarian category (altruistic)
+3. the average duration of a civil war with a third-party duration whose motive did not fall into the humanitarian category (self-interested).
+Consequently, I want to compare these data findings to investigate in what way the declared motive of humanitarian concern helped mitigate conflict to then infer in what way motive (altruistic v.s. self-interested) behind third-party intervention matters when it comes to ending civil wars.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>civil_war_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Intra-StateWarData_v4.1.csv"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>humanitarian_intervention_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"PRIF-dataset-HMI-interventions-v-July-2019.xlsx"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
