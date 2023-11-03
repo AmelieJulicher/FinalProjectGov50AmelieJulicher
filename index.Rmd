@@ -31,3 +31,36 @@ civil_war_data <- read_csv("Intra-StateWarData_v4.1.csv")
 humanitarian_intervention_data <- read_excel("PRIF-dataset-HMI-interventions-v-July-2019.xlsx")
 ```
 
+
+##Milestone 3 
+
+```{r}
+humanitarian_intervention_data <- humanitarian_intervention_data |> 
+  filter(ENDTYPE == 1) 
+
+humanitarian_intervention_data <- humanitarian_intervention_data |> 
+  filter(FATALITY != -99)
+
+
+humanitarian_intervention_data <- humanitarian_intervention_data %>% 
+  mutate(FATALITY = as.numeric(FATALITY))
+
+ggplot(data = humanitarian_intervention_data, mapping = aes(x = STATUS, y = FATALITY)) + 
+      geom_point()
+
+
+class(humanitarian_intervention_data$FATALITY)
+
+```
+##Notes on the data 
+In a humanitarian military intervention a state or a group of states sends troops to another country, uses or threatens military force with the declared intention of saving citizens of the target country from a violent emergency. Our understanding of humanitarian military intervention does neither imply a claim that these interventions were solely or primarily motivated by humanitarian motivations. Nor does our definition postulate that a humanitarian military intervention indeed improves the situation in the target country. Thus, the term “humanitarian military intervention” is used to denote a subcategory of military interventions that are conducted with a declared humanitarian intention. 
+
+##Explanation of the plot 
+I grouped the humanitarian military interventions by status. 
+1 = A boarderline military humanitarian intervention 
+2 = A  military humanitarian intervention 
+
+
+The scatter plot indicates the number of fatalities in the target country due to the violent emergency prior to the intervention. The plot indicates that the number of fatalities was higher when a military humanitarian intervention followed than it was when only a boarderline military intervention followed. This might give interesting insights into why a certain type of intervention is chosen. However, the sample is very limited. 
+
+
