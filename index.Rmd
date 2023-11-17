@@ -64,6 +64,6 @@ I grouped the humanitarian military interventions by status.
 
 
 The scatter plot indicates the number of fatalities in the target country due to the violent emergency prior to the intervention. The plot indicates that the number of fatalities was higher when a military humanitarian intervention followed than it was when only a borderline military intervention followed. This might give interesting insights into why a certain type of intervention is chosen. However, the sample is very limited. 
-Since the sample is so limited it makes it difficult to run a regression analysis that can be truly informative. As such the next step, I am planning on taking is to possibly change my dataset to find one that is less limited and can help me further investigate a certain question. 
+Since the sample is so limited it makes it difficult to run a regression analysis that can be truly informative. As such the next step I am planning on taking is to possibly change my dataset to find one that is less limited and can thus help me further investigate a certain question.
 
 
