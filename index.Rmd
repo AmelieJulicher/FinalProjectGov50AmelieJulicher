@@ -15,7 +15,7 @@ I am interested in exploring data related to third-party interventions in civil 
 For this I want to work with the COW dataset. 
 
 
-## Project thoughts (Milestone 2)
+## Project Thoughts (Milestone 2)
 Since I am interested in exploring the impact motive has on the prospect of launching a successful third-party intervention I was interested in looking for an additional dataset that does not only give me insights about the civil wars but also about third-party interventions that occured and their proclaimed motives. Certainly it is difficult to ever truly know the motives of a government official especially within the bounds of this assignment which is driven by quantitative analysis and not qualitative analysis. As such I plan on taking the openly stated motivation behind the intervention as assigned in the The PRIF Dataset on Humanitarian Military Interventions since 1945 as the truth for my further analysis. I then plan to combine this dataset with the COW dataset to investigate 1. the average duration of a civil war without a third-party intervention 
 2. the average duration of a civil war with a third-party duration whose motive fell into the humanitarian category (altruistic)
 3. the average duration of a civil war with a third-party duration whose motive did not fall into the humanitarian category (self-interested). 
@@ -26,13 +26,13 @@ Consequently, I want to compare these data findings to investigate in what way t
 library(tidyverse)
 library(readxl)
 
-civil_war_data <- read_csv("Intra-StateWarData_v4.1.csv")
+civil_war_data <- read_csv("Intra-StateWarData_v4.1.csv", show_col_types = FALSE)
 
 humanitarian_intervention_data <- read_excel("PRIF-dataset-HMI-interventions-v-July-2019.xlsx")
 ```
 
 
-##Milestone 3 
+## Project thoughts (Milestone 3) 
 
 ```{r}
 humanitarian_intervention_data <- humanitarian_intervention_data |> 
@@ -52,15 +52,18 @@ ggplot(data = humanitarian_intervention_data, mapping = aes(x = STATUS, y = FATA
 class(humanitarian_intervention_data$FATALITY)
 
 ```
-##Notes on the data 
+## Project Thoughts (Milestone 4)
+
+#Further explanation of the Data
 In a humanitarian military intervention a state or a group of states sends troops to another country, uses or threatens military force with the declared intention of saving citizens of the target country from a violent emergency. Our understanding of humanitarian military intervention does neither imply a claim that these interventions were solely or primarily motivated by humanitarian motivations. Nor does our definition postulate that a humanitarian military intervention indeed improves the situation in the target country. Thus, the term “humanitarian military intervention” is used to denote a subcategory of military interventions that are conducted with a declared humanitarian intention. 
 
 ##Explanation of the plot 
 I grouped the humanitarian military interventions by status. 
-1 = A boarderline military humanitarian intervention 
+1 = A borderline military humanitarian intervention 
 2 = A  military humanitarian intervention 
 
 
-The scatter plot indicates the number of fatalities in the target country due to the violent emergency prior to the intervention. The plot indicates that the number of fatalities was higher when a military humanitarian intervention followed than it was when only a boarderline military intervention followed. This might give interesting insights into why a certain type of intervention is chosen. However, the sample is very limited. 
+The scatter plot indicates the number of fatalities in the target country due to the violent emergency prior to the intervention. The plot indicates that the number of fatalities was higher when a military humanitarian intervention followed than it was when only a borderline military intervention followed. This might give interesting insights into why a certain type of intervention is chosen. However, the sample is very limited. 
+Since the sample is so limited it makes it difficult to run a regression analysis that can be truly informative. As such the next step, I am planning on taking is to possibly change my dataset to find one that is less limited and can help me further investigate a certain question. 
 
 
